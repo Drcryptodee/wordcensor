@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Censor App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #1b1b1b 0%, #1b1b1b 100%);
+            font-family: 'Outfit', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            gap: 20px;
+        }
+
+        input {
+            padding: 12px 20px;
+            border-radius: 10px;
+            border: 1px solid #cbd5e1;
+            width: 300px;
+            font-size: 1rem;
+            outline: none;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        }
+
+        button {
+            padding: 12px 30px;
+            background: #169d53;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        #displayText {
+            font-size: 1.25rem;
+            color: #ff6600;
+            font-weight: 500;
+            text-align: center;
+            max-width: 80%;
+        }
+    </style>
+</head>
+
+<body>
+    <input id="textGrab" type="text" placeholder="Type something naughty...">
+    <button onclick="grabText()">Submit</button>
+    <p id="displayText"></p>
+</body>
+
+</html>
+
+<script>
+    let text = document.getElementById('textGrab').value
+    let display = document.getElementById('displayText')
+    let censoredWords = ['fuck', 'shit', 'bitch', 'pleb']
+
+
+    function grabText() {
+        let text = document.getElementById('textGrab').value.toLowerCase().trim()
+        let censoredText = text.replaceAll(censoredWords[0], '****');
+        censoredText = censoredText.replaceAll(censoredWords[1], '****');
+        censoredText = censoredText.replaceAll(censoredWords[2], '****');
+        censoredText = censoredText.replaceAll(censoredWords[3], '****');
+        display.innerHTML = censoredText;
+
+    }
+
+
+</script>
