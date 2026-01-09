@@ -72,10 +72,10 @@
 
     function grabText() {
         let text = document.getElementById('textGrab').value.toLowerCase().trim()
-        let censoredText = text.replaceAll(censoredWords[0], '****');
-        censoredText = censoredText.replaceAll(censoredWords[1], '****');
-        censoredText = censoredText.replaceAll(censoredWords[2], '****');
-        censoredText = censoredText.replaceAll(censoredWords[3], '****');
+        let censoredText = text.replaceAll(censoredWords[0], 'fu**');
+        censoredText = censoredText.replaceAll(censoredWords[1], 'sh**');
+        censoredText = censoredText.replaceAll(censoredWords[2], 'bi***');
+        censoredText = censoredText.replaceAll(censoredWords[3], 'pl**');
         display.innerHTML = censoredText;
 
     }
